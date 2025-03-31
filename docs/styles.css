@@ -1,0 +1,508 @@
+:root {
+  /* Color Variables */
+  --bg-dark: #090909;
+  --bg-light: #f5f5f5;
+  --card-dark: #292929; /* Dark card background */
+  --card-light: #ffffff; /* Light card background */
+  --text-dark: #ffffff;
+  --text-light: #333333;
+  
+  /* Sidebar Variables */
+  --sidebar-dark: #151515;
+  --sidebar-light: #f0f0f0;
+  --sidebar-text-dark: #ffffff;
+  --sidebar-text-light: #333333;
+  --sidebar-hover-dark: rgba(255, 255, 255, 0.1);
+  --sidebar-hover-light: rgba(0, 0, 0, 0.05);
+  
+  /* Accent Colors */
+  --primary-accent: #4a6bff;
+  --secondary-accent: #00d4ff;
+  
+  /* Grid Variables */
+  --grid-line-dark: rgba(74, 107, 255, 0.15);
+  --grid-line-light: rgba(0, 0, 0, 0.1);
+  --grid-bg-dark: #090909;
+  --grid-bg-light: #f5f5f5;
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Urbanist', sans-serif;
+  color: var(--text-dark);
+  min-height: 100vh;
+  
+  /* Grid Background */
+  background-color: var(--grid-bg-dark);
+  background-image: 
+    linear-gradient(var(--grid-line-dark) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line-dark) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: gridScroll 120s linear infinite;
+  transition: all 0.3s ease;
+}
+
+body.light-mode {
+  color: var(--text-light);
+  background-color: var(--grid-bg-light);
+  background-image: 
+    linear-gradient(var(--grid-line-light) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line-light) 1px, transparent 1px);
+}
+
+@keyframes gridScroll {
+  from { background-position: 0 0; }
+  to { background-position: 0px 1000px; }
+}
+
+/* Main Layout */
+main {
+  padding: 100px 20px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Theme Toggle */
+#theme-toggle {
+  position: absolute;
+  top: 34.5px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+  color: white;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+body.light-mode #theme-toggle {
+  color: var(--text-light);
+}
+
+#theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* Material Icons */
+.material-icons {
+  vertical-align: middle;
+  margin-right: 8px;
+  font-size: 1.2em;
+}
+
+/* Header Content */
+.title {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  margin: 0 0 20px;
+  background: linear-gradient(90deg, var(--primary-accent), var(--secondary-accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.description {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin-bottom: 40px;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* Cards */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.card {
+  width: 100%;
+  background: transparent;
+  border-radius: 12px;
+  padding: 25px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid var(--primary-accent);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+body.light-mode .card {
+  background: transparent;
+  border: 2px solid var(--primary-accent);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-color: var(--secondary-accent);
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: var(--primary-accent);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card p {
+  opacity: 0.9;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+/* About Section */
+.about-section {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: transparent;
+  border-radius: 12px;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  margin: 0 0 20px;
+  background: linear-gradient(90deg, var(--primary-accent), var(--secondary-accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.section-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  color: var(--text-dark); /* Default dark color */
+}
+
+/* Light Mode */
+body.light-mode .section-description {
+  color: var(--text-light); /* Change to light color in light mode */
+}
+
+/* Sidebar */
+.sidebar {
+  height: 200%;
+  width: 0; /* Initially closed */
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: var(--sidebar-dark);
+  overflow-x: hidden;
+  transition: width 0.4s ease; /* Smooth transition for opening and closing */
+  padding-top: 60px;
+  z-index: 1000;
+}
+
+body.light-mode .sidebar {
+  background: var(--sidebar-light);
+}
+
+.sidebar.open {
+  width: 250px; /* Set the width when the sidebar is open */
+}
+
+.sidebar a {
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  color: var(--sidebar-text-dark);
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+body.light-mode .sidebar a {
+  color: var(--sidebar-text-light);
+}
+
+.sidebar a:hover {
+  background: var(--sidebar-hover-dark);
+  color: var(--secondary-accent);
+}
+
+body.light-mode .sidebar a:hover {
+  background: var(--sidebar-hover-light);
+}
+
+.closebtn {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  background: none;
+  border: none;
+  color: var(--sidebar-text-dark);
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+body.light-mode .closebtn {
+  color: var(--sidebar-text-light);
+}
+
+/* Hamburger Button */
+.menu-icon {
+  font-size: 32px;
+  background: none;
+  border: none;
+  color: var(--sidebar-text-dark);
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+body.light-mode .menu-icon {
+  color: var(--sidebar-text-light);
+}
+
+.menu-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Sidebar Dropdown Content */
+.dropdown-content {
+    display: none; /* Initially hidden */
+    background-color: var(--sidebar-dark);
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+body.light-mode .dropdown-content {
+    background-color: var(--sidebar-light); /* Light background in light mode */
+}
+
+.dropdown-content a {
+    color: var(--sidebar-text-dark);
+    padding: 8px 20px;
+    text-decoration: none;
+    display: block;
+    font-size: 1rem;
+}
+
+body.light-mode .dropdown-content a {
+    color: var(--sidebar-text-light); /* Light text color in light mode */
+}
+
+.dropdown-content a:hover {
+    background-color: var(--sidebar-hover-dark);
+    color: var(--secondary-accent);
+}
+
+body.light-mode .dropdown-content a:hover {
+    background-color: var(--sidebar-hover-light);
+}
+
+/* Socials Dropdown in Sidebar */
+.socials-links {
+  display: none;
+  margin-left: 20px;
+}
+
+.socials-links a {
+  display: block;
+  color: #FFF;
+  text-decoration: none;
+  padding: 8px 0;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.socials-links a:hover {
+  background-color: #444;
+}
+
+.socials-btn:hover {
+  cursor: pointer;
+  background-color: #444;
+  color: #FFF;
+}
+
+body.light-mode .socials-links a {
+  color: #333;
+}
+
+body.light-mode .socials-links a:hover {
+  background-color: #ccc;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: rippleEffect 0.6s ease-out;
+  will-change: transform, opacity;
+  opacity: 1;
+  pointer-events: none; /* Prevent interaction issues */
+}
+
+@keyframes rippleEffect {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+button, a {
+  outline: none;
+  box-shadow: none;
+}
+button:focus, a:focus {
+  outline: none;
+  box-shadow: none;
+}
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* Fully transparent */
+  -webkit-touch-callout: none; /* Prevents context menu on long press */
+}
+/* Minimalist Chapter List Styles */
+.minimalist-chapter-list {
+    margin-top: 40px;
+    max-width: 600px;
+}
+
+.minimalist-chapter-list ol {
+    list-style: none;
+    counter-reset: chapter-counter;
+    padding: 0;
+    margin: 0;
+}
+
+.minimalist-chapter-list li {
+    counter-increment: chapter-counter;
+    position: relative;
+    padding: 20px 0 20px 60px;
+    font-size: 1.2rem;
+    border-bottom: 1px solid var(--grid-line-dark);
+    color: var(--text-dark);
+    transition: all 0.3s ease;
+}
+
+body.light-mode .minimalist-chapter-list li {
+    color: var(--text-light);
+    border-bottom-color: var(--grid-line-light);
+}
+
+.minimalist-chapter-list li:before {
+    content: counter(chapter-counter);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: var(--primary-accent);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.minimalist-chapter-list li {
+    transition: padding-left 0.2s ease, color 0.2s ease;
+}
+
+.minimalist-chapter-list li:hover {
+    color: var(--primary-accent);
+    padding-left: 65px;
+}
+
+.minimalist-chapter-list a {
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Keeps text color same as surrounding text */
+    display: block; /* Ensures the entire li is clickable */
+}
+
+.minimalist-chapter-list li:last-child {
+    border-bottom: none;
+}
+/* Sample Papers List Styles */
+.sample-papers-list {
+    margin-top: 30px;
+    max-width: 800px;
+}
+
+.paper-item {
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background: var(--card-dark);
+    transition: all 0.3s ease;
+}
+
+body.light-mode .paper-item {
+    background: var(--card-light);
+}
+
+.paper-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.paper-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-accent);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    transition: color 0.2s ease;
+}
+
+.paper-title:hover {
+    color: var(--secondary-accent);
+}
+
+.marking-scheme {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+}
+
+.marking-scheme a {
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+body.light-mode .marking-scheme a {
+    color: var(--text-light);
+}
+
+.marking-scheme a:hover {
+    color: var(--secondary-accent);
+}
+
+.marking-scheme .material-icons {
+    font-size: 1.1rem;
+    color: var(--secondary-accent);
+}

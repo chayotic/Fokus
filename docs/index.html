@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Computer Science</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;700&display=swap">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="material-icons" aria-label="Toggle dark mode">dark_mode</button>
+
+    <!-- Hamburger Menu -->
+    <button class="menu-icon material-icons" onclick="openNav()" aria-label="Open navigation">menu</button>
+
+    <!-- Sidebar -->
+    <nav id="mySidebar" class="sidebar">
+        <button class="closebtn material-icons" onclick="closeNav()" aria-label="Close navigation">close</button>
+        <a href="/"><span class="material-icons">home</span> Home</a>
+        <a href="javascript:void(0)" onclick="toggleSocials()"><span class="material-icons">group</span> Socials</a>
+        <div id="socials-dropdown" class="dropdown-content">
+            <a href="https://github.com/chayotic/" target="_blank">GitHub</a>
+            <a href="https://t.me/chayotik/" target="_blank">Telegram</a>
+        </div>
+        <a href="contribute.html"><span class="material-icons">donut_large</span> Contribute</a>
+        <a href="mailto:rohithrpai07@proton.me"><span class="material-icons">email</span> Contact</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <h1 class="title">Learn Computer Science</h1>
+        <p class="description">
+            A free and open-source website for CBSE Class XI & XII students.
+            Get study materials, sample papers, and exam preparation resources.
+        </p>
+
+        <!-- Cards -->
+        <!-- In index.html, replace the cards-container div with this: -->
+<div class="cards-container">
+    <div class="card" onclick="location.href='class_11.html'" tabindex="0">
+        <h2><span class="material-icons">school</span> Class 11</h2>
+        <p>Covers computer systems, data representation, Python basics, data handling, flow of control, string and list manipulation, tuples, dictionaries and more</p>
+    </div>
+    <div class="card" onclick="location.href='class_12.html'" tabindex="0">
+        <h2><span class="material-icons">assignment</span> Class 12</h2>
+        <p>Covers Python fundamentals, functions, file handling, data structures like stacks, computer networks, and SQL for database management.</p>
+    </div>
+</div>
+
+        <!-- About Section -->
+        <section class="about-section">
+            <h2 class="section-title">About</h2>
+            <p class="section-description">
+                This website is a free resource designed to help computer science students studying for the CBSE Class 11 & 12 exams. We provide high-quality study materials, sample papers, and additional resources that can help you in your exam preparation.
+        All materials shared on this website are intended to be freely accessible educational resources. We encourage users to contribute content that is either publicly available or authorized for educational use, and we do not accept copyrighted or premium materials.
+        <br><br>
+        This website is open-source and hosted on GitHub. Feel free to explore the project and contribute to its growth.
+            </p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
