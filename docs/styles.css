@@ -617,12 +617,10 @@ body.light-mode .card h2 {
 .contribute-steps {
     margin-top: 20px;
     padding-top: 15px;
-    border-top: 1px solid var(--grid-line-dark);
 }
 
 body.light-mode .contribute-guidelines,
 body.light-mode .contribute-steps {
-    border-top-color: var(--grid-line-light);
 }
 
 .contribute-guidelines h3,
