@@ -650,3 +650,85 @@ body.light-mode .contribute-steps {
         padding: 100px 40px 40px;
     }
 }
+
+/* Set Buttons */
+.set-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 16px;
+    background-color: var(--primary-accent);
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    flex: 1;
+    min-width: 100px;
+    justify-content: center;
+}
+
+.set-btn:hover {
+    background-color: transparent;
+    color: var(--primary-accent);
+    border-color: var(--primary-accent);
+    transform: translateY(-2px);
+}
+
+.set-btn .material-icons {
+    font-size: 1.1rem;
+}
+
+/* Paper Links Grid Layout */
+.paper-links-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.button-row {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+}
+
+.set-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 16px;
+    background-color: var(--primary-accent);
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    flex: 1;
+    min-width: 0;
+}
+
+.set-btn:hover {
+    background-color: transparent;
+    color: var(--primary-accent);
+    border-color: var(--primary-accent);
+    transform: translateY(-2px);
+}
+
+.set-btn .material-icons {
+    font-size: 1.1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .button-row {
+        flex-direction: column;
+    }
+    
+    .set-btn {
+        width: 100%;
+    }
+}
