@@ -732,3 +732,24 @@ body.light-mode .contribute-steps {
         width: 100%;
     }
 }
+
+.popup-card {
+    position: absolute;
+    background-color: #292929;
+    color: #FAFAFA;
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    font-size: 0.9rem;
+    z-index: 999;
+    transition: opacity 0.3s ease;
+}
+
+.popup-card.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.popup-card.show {
+    opacity: 1;
+}
