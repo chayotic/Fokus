@@ -96,3 +96,24 @@ document.addEventListener('keydown', (e) => {
         closeNav();
     }
 });
+
+document.querySelectorAll('.set-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        if (btn.dataset.available === "false") {
+            e.preventDefault();
+
+            const popup = document.getElementById('popup-card');
+            const rect = btn.getBoundingClientRect();
+
+            popup.style.top = `${rect.bottom + window.scrollY + 5}px`;
+            popup.style.left = `${rect.left + window.scrollX}px`;
+            popup.classList.remove('hidden');
+            popup.classList.add('show');
+
+            setTimeout(() => {
+                popup.classList.remove('show');
+                popup.classList.add('hidden');
+            }, 2000);
+        }
+    });
+});
