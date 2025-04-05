@@ -6,7 +6,7 @@
   --card-light: #ffffff; /* Light card background */
   --text-dark: #ffffff;
   --text-light: #333333;
-  
+
   /* Sidebar Variables */
   --sidebar-dark: #151515;
   --sidebar-light: #f0f0f0;
@@ -14,11 +14,11 @@
   --sidebar-text-light: #333333;
   --sidebar-hover-dark: rgba(255, 255, 255, 0.1);
   --sidebar-hover-light: rgba(0, 0, 0, 0.05);
-  
+
   /* Accent Colors */
   --primary-accent: #4a6bff;
   --secondary-accent: #00d4ff;
-  
+
   /* Grid Variables */
   --grid-line-dark: rgba(74, 107, 255, 0.15);
   --grid-line-light: rgba(0, 0, 0, 0.1);
@@ -37,7 +37,7 @@ body {
   font-family: 'Urbanist', sans-serif;
   color: var(--text-dark);
   min-height: 100vh;
-  
+
   /* Grid Background */
   background-color: var(--grid-bg-dark);
   background-image: 
@@ -568,7 +568,7 @@ body.light-mode .card h2 {
     .paper-links {
         flex-direction: column;
     }
-    
+
     .download-btn {
         width: 100%;
         justify-content: center;
@@ -645,7 +645,7 @@ body.light-mode .contribute-steps {
     .cards-container {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     main {
         padding: 100px 40px 40px;
     }
@@ -752,4 +752,4 @@ body.light-mode .contribute-steps {
 
 .popup-card.show {
     opacity: 1;
-}
+  }
