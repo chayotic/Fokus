@@ -11,7 +11,7 @@
 <body>
     <!-- Theme Toggle -->
     <button id="theme-toggle" class="material-icons" aria-label="Toggle dark mode">dark_mode</button>
-    
+
     <!-- Hamburger Menu -->
     <button class="menu-icon material-icons" onclick="openNav()" aria-label="Open navigation">menu</button>
 
@@ -32,16 +32,19 @@
     <main>
         <h1 class="title">Class XI Units</h1>
         <p class="description">Download unit-wise material to enhance your learning and revision.</p>
-        
+
         <!-- Minimalist Chapter List -->
         <div class="minimalist-chapter-list">
             <ol>
-                <li><a href="">Computer Systems and Organisation</a></li>
-                <li><a href="">Computational Thinking and Programming</a></li>
-                <li><a href="">Society Law and Ethics</a></li>
+                <li><a href="#" class="chapter-link" data-available="false">Computer Systems and Organisation</a></li>
+                <li><a href="#" class="chapter-link" data-available="false">Computational Thinking and Programming</a></li>
+                <li><a href="#" class="chapter-link" data-available="false">Society Law and Ethics</a></li>
             </ol>
         </div>
     </main>
+
+    <!-- Popup Card -->
+    <div id="popup-card" class="popup-card hidden">Material not available</div>
 
     <script src="script.js"></script>
 </body>
