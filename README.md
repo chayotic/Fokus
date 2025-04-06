@@ -1,6 +1,6 @@
 ## Materials Required!!
 
-• Class XI Sample Paper
+• Class XI Unit Wise Material & Sample Paper
 
 • Class XII PYQ's (Region Wise) Required 
 
