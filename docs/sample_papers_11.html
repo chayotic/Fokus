@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class XI Sample Papers</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;700&display=swap">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="material-icons" aria-label="Toggle dark mode">dark_mode</button>
+    
+    <!-- Hamburger Menu -->
+    <button class="menu-icon material-icons" onclick="openNav()" aria-label="Open navigation">menu</button>
+
+    <!-- Sidebar -->
+    <nav id="mySidebar" class="sidebar">
+        <button class="closebtn material-icons" onclick="closeNav()" aria-label="Close navigation">close</button>
+        <a href="index.html"><span class="material-icons">home</span> Home</a>
+        <a href="javascript:void(0)" onclick="toggleSocials()"><span class="material-icons">group</span> Socials</a>
+        <div id="socials-dropdown" class="dropdown-content">
+            <a href="https://github.com/chayotic/" target="_blank">GitHub</a>
+            <a href="https://t.me/chayotik/" target="_blank">Telegram</a>
+        </div>
+        <a href="contribute.html"><span class="material-icons">donut_large</span> Contribute</a>
+        <a href="mailto:rohithrpai07@proton.me"><span class="material-icons">email</span> Contact</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <h1 class="title">Class XI Sample Papers</h1>
+        <p class="description">Download sample papers and marking schemes for exam preparation.</p>
+        
+        <!-- Sample Papers List -->
+        <div class="cards-container">
+            <div class="card">
+                <h2><span class="material-icons">description</span> CBSE 2024-25</h2>
+                <p>Latest sample paper for the academic year 2024-25 with updated pattern.</p>
+                <div class="paper-links">
+                    <button class="download-btn" data-available="false">
+                        <span class="material-icons">download</span> Sample Paper
+                    </button>
+                    <button class="download-btn" data-available="false">
+                        <span class="material-icons">grading</span> Marking Scheme
+                    </button>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2><span class="material-icons">description</span> CBSE 2023-24</h2>
+                <p>Sample paper for the academic year 2023-24 with revised curriculum.</p>
+                <div class="paper-links">
+                    <button class="download-btn" data-available="false">
+                        <span class="material-icons">download</span> Sample Paper
+                    </button>
+                    <button class="download-btn" data-available="false">
+                        <span class="material-icons">grading</span> Marking Scheme
+                    </button>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2><span class="material-icons">description</span> CBSE 2022-23</h2>
+                <p>Sample paper for the academic year 2022-23 with complete syllabus coverage.</p>
+                <div class="paper-links">
+                    <button class="download-btn" data-available="false">
+                        <span class="material-icons">download</span> Sample Paper
+                    </button>
+                    <button class="download-btn" data-available="false">
+                        <span class="material-icons">grading</span> Marking Scheme
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Popup Card -->
+    <div id="popup-card" class="popup-card hidden">Material not available</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
